@@ -1,0 +1,352 @@
+:root {
+    --main-bg-color: #f05454;
+    --second-bg-color: #222831;
+    --third-bg-color: #393e46;
+    --main-color: #00adb5;
+    --second-color: #eeeeee;
+    --third-color: #aaaaaa;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--third-bg-color);
+    color: var(--second-color);
+}
+
+*, *:after, *:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="submit"], button {
+    cursor: pointer;
+}
+
+header, nav form, footer, .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header, footer {
+    background: linear-gradient(135deg, var(--main-bg-color), var(--second-bg-color));
+    width: 100vw;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+header img {
+    margin: 20px;
+    width: 300px;
+    filter: drop-shadow(0 0 8px var(--main-color));
+}
+
+nav form {
+    margin-bottom: 20px;
+    width: 100vw;
+}
+
+#search, #search-btn {
+    border-radius: 10px;
+    border: none;
+    height: 45px;
+}
+
+#search {
+    width: 60%;
+    margin-bottom: 15px;
+    padding: 0 20px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    background-color: var(--second-bg-color);
+    color: var(--second-color);
+}
+
+#search:focus {
+    outline: 2px solid var(--main-color);
+    background-color: var(--third-bg-color);
+}
+
+#search:focus::placeholder {
+    color: var(--main-color);
+}
+
+#search-btn {
+    width: 120px;
+    font-size: 1.1rem;
+    background-color: var(--main-color);
+    color: var(--second-color);
+    font-weight: 600;
+}
+
+#search-btn:hover {
+    background-color: var(--second-bg-color);
+    color: var(--main-color);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+.container {
+    background: var(--third-bg-color);
+    width: 100%;
+    height: 80dvh;
+    font-size: 2.5rem;
+    color: var(--second-color);
+    text-align: center;
+    padding: 40px;
+}
+
+#random {
+    background-color: var(--main-color);
+    color: var(--second-color);
+    border: none;
+    border-radius: 30px;
+    width: 300px;
+    height: 75px;
+    font-size: 1.75rem;
+    animation: pulse 2s infinite;
+    font-weight: 600;
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+#random:hover {
+    font-style: italic;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+#search-result, #anime {
+    background: var(--third-bg-color);
+    color: var(--second-color);
+    padding: 50px;
+    min-height: 80dvh;
+}
+
+#search-animes, #search-pages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+#search-animes button {
+    background-color: var(--second-bg-color);
+    border: none;
+    border-radius: 15px;
+    width: 220px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#search-animes button:hover {
+    background-color: var(--main-bg-color);
+    color: var(--second-color);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+#search-animes img {
+    width: 100%;
+    height: 330px;
+    border-radius: 15px 15px 0 0;
+    object-fit: cover;
+}
+
+#search-animes h3 {
+    margin: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--second-color);
+}
+
+#search-pages button, #search-pages p {
+    font-size: 1.1rem;
+    margin: 5px;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+#search-pages button {
+    border: none;
+    background-color: var(--main-color);
+    color: var(--second-color);
+    font-weight: bold;
+}
+
+#search-pages button:hover {
+    background-color: var(--second-color);
+    color: var(--main-color);
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+#search-pages p {
+    background-color: var(--second-bg-color);
+    color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#anime {
+    display: grid;
+    grid-template: 
+        "head head" auto
+        "foot nav" auto
+        "foot main" auto
+        / auto 3fr;
+    gap: 20px;
+}
+
+#anime-title, #anime-image, #anime-data, #anime-synopsis {
+    background-color: var(--second-bg-color);
+    border-radius: 10px;
+    padding: 20px;
+    list-style: none;
+}
+
+#anime-title {
+    grid-area: head;
+    font-size: 2rem;
+    color: var(--main-color);
+    text-align: center;
+}
+
+#anime-title h3 {
+    color: var(--third-color);
+    font-size: 1.25rem;
+}
+
+#anime-image {
+    grid-area: foot;
+    display: flex;
+    justify-content: center;
+}
+
+#anime-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#anime-data {
+    grid-area: nav;
+    color: var(--third-color);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+#anime-data span {
+    font-size: 1.1rem;
+    color: var(--second-color);
+    font-weight: 500;
+}
+
+#anime-synopsis {
+    grid-area: main;
+    font-size: 1.1rem;
+    color: var(--second-color);
+    line-height: 1.6;
+}
+
+footer {
+    height: 90px;
+    font-style: italic;
+    text-align: center;
+    padding: 10px;
+}
+
+footer p {
+    margin: 5px;
+    font-size: 1rem;
+    color: var(--second-color);
+}
+
+footer p:hover, footer a:hover {
+    color: var(--main-color);
+    transform: scale(1.1);
+}
+
+footer a {
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: var(--second-color);
+    font-weight: bold;
+}
+.genre-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.genre-btn {
+  background-color: var(--second-bg-color);
+  color: var(--second-color);
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.genre-btn:hover {
+  background-color: var(--main-color);
+  color: var(--third-bg-color);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--main-color);
+}
+
+
+@media screen and (max-width: 768px) {
+    #search {
+        width: 90%;
+        font-size: 1.1rem;
+    }
+
+    #random {
+        width: 90%;
+        font-size: 1.4rem;
+        height: 60px;
+    }
+
+    #search-animes button {
+        width: 90%;
+    }
+
+    #anime {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    header img {
+        width: 200px;
+    }
+
+    #search {
+        width: 80%;
+    }
+}

@@ -1,0 +1,40 @@
+<%- include("header.ejs") %>
+
+    <% if (locals.search) { %>
+        <% if (search == 0) { %>
+            <div class="container">
+                <h1>Anime not found</h1>
+            </div>
+        <% } else { %>
+            <%- include("search.ejs") %>
+        <% } %>
+    <% } else if (locals.content) { %>
+        <%- include("anime.ejs") %>
+    <% } else { %>
+         <div class="genre-buttons">
+  <form action="/genre" method="post">
+    <input type="hidden" name="genre" value="1">
+    <button class="genre-btn">Action</button>
+  </form>
+  <form action="/genre" method="post">
+    <input type="hidden" name="genre" value="2">
+    <button class="genre-btn">Adventure</button>
+  </form>
+  <form action="/genre" method="post">
+    <input type="hidden" name="genre" value="4">
+    <button class="genre-btn">Comedy</button>
+  </form>
+  <form action="/genre" method="post">
+    <input type="hidden" name="genre" value="8">
+    <button class="genre-btn">Drama</button>
+  </form>
+</div>
+        <div class="container">
+            <form id="random-form" action="/random" method="post">
+                <input id="random" type="submit" value="Random Anime">
+            </form>
+        </div>
+       
+    <% } %>
+
+<%- include("footer.ejs") %>
