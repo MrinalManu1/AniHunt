@@ -12,12 +12,12 @@ AniHunt is a sleek, modern web app that helps you discover anime titles based on
 ## 📸 Screenshots
 
 ### Homepage
-![alt text](image.png)
-![alt text](image-1.png)
+![alt text](public/screenshots/image.png)
+![alt text](public/screenshots/image-1.png)
 
 
 ### Search Results
-![alt text](image-2.png)
+![alt text](public/screenshots/image-2.png)
 
 
 
